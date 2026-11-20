@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCart - Grocery Delivery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Quick<span>Cart</span></div>
+
+        <div class="location">
+            📍 <b>Deliver to</b><br>
+            Jaipur, Rajasthan
+        </div>
+
+        <div class="search-box">
+            🔍
+            <input type="text" id="searchInput"
+                   placeholder="Search for products...">
+        </div>
+
+        <button class="login-btn">Login</button>
+
+        <button class="cart-btn" onclick="openCart()">
+            🛒 Cart <span id="cartCount">0</span>
+        </button>
+    </header>
+
+
+    <!-- Delivery Banner -->
+    <section class="banner">
+        <div>
+            <h1>Groceries delivered in minutes ⚡</h1>
+            <p>Fresh groceries, snacks and daily essentials at your doorstep.</p>
+            <button onclick="scrollToProducts()">Shop Now</button>
+        </div>
+    </section>
+
+
+    <!-- Categories -->
+    <section class="container">
+        <h2>Shop by Category</h2>
+
+        <div class="categories">
+
+            <div class="category" onclick="filterCategory('Fruits')">
+                <div class="category-icon">🍎</div>
+                <p>Fruits</p>
+            </div>
+
+            <div class="category" onclick="filterCategory('Vegetables')">
+                <div class="category-icon">🥦</div>
+                <p>Vegetables</p>
+            </div>
+
+            <div class="category" onclick="filterCategory('Dairy')">
+                <div class="category-icon">🥛</div>
+                <p>Dairy</p>
+            </div>
+
+            <div class="category" onclick="filterCategory('Snacks')">
+                <div class="category-icon">🍿</div>
+                <p>Snacks</p>
+            </div>
+
+            <div class="category" onclick="filterCategory('Drinks')">
+                <div class="category-icon">🥤</div>
+                <p>Drinks</p>
+            </div>
+
+            <div class="category" onclick="filterCategory('Personal Care')">
+                <div class="category-icon">🧴</div>
+                <p>Personal Care</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Products -->
+    <section class="container" id="productsSection">
+
+        <div class="section-heading">
+            <h2>Popular Products</h2>
+            <button onclick="showAllProducts()">View All</button>
+        </div>
+
+        <div class="products" id="productContainer"></div>
+
+    </section>
+
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+
+        <div class="cart-header">
+            <h2>🛒 Your Cart</h2>
+            <button onclick="closeCart()">✕</button>
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-bottom">
+
+            <div class="bill">
+                <span>Subtotal</span>
+                <b>₹<span id="cartTotal">0</span></b>
+            </div>
+
+            <button class="checkout-btn" onclick="checkout()">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <h2>QuickCart</h2>
+        <p>Your everyday grocery delivery partner.</p>
+        <p>© 2026 QuickCart. All Rights Reserved.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
